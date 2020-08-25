@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">PlanZajec_PracaInzynierska</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="wydzial">Wydział:</string>
+    <string name="kierunek_studiow">Kierunek Studiów:</string>
+    <string name="semestr">Semestr:</string>
+    <string name="grupa_dziekanska">Grupa dziekańska:</string>
+    <string name="dodaj_plan">Dodaj Plan</string>
 </resources>
