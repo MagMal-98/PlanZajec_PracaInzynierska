@@ -8,4 +8,9 @@
     <string name="grupa_dziekanska">Grupa dziekańska:</string>
     <string name="dodaj_plan">Dodaj Plan</string>
     <string name="button">Button</string>
+
+
+
+    <string name="openNavDrawer">Navigation Drawer Open</string>
+    <string name="closeNavDrawer">Navigation Drawer Close</string>
 </resources>

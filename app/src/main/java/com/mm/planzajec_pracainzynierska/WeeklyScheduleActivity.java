@@ -1,14 +1,21 @@
 package com.mm.planzajec_pracainzynierska;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.text.Html;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class WeeklyScheduleActivity extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class WeeklyScheduleActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ViewPager mSlideViewPager;
     private LinearLayout mLinearLayout;
@@ -16,6 +23,13 @@ public class WeeklyScheduleActivity extends AppCompatActivity {
     private TextView[] mDots;
 
     private SliderAdapter sliderAdapter;
+
+
+    private Toolbar tooblar;
+
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private ActionBarDrawerToggle mToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +46,25 @@ public class WeeklyScheduleActivity extends AppCompatActivity {
         addDotsIndicator(0);
 
         mSlideViewPager.addOnPageChangeListener(viewListener);
+
+
+        tooblar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(tooblar);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+
+        mToggle = new ActionBarDrawerToggle(
+                this,
+                drawerLayout,
+                tooblar,
+                R.string.openNavDrawer,
+                R.string.closeNavDrawer
+        );
+
+        drawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
 
     }
 
@@ -73,4 +106,14 @@ public class WeeklyScheduleActivity extends AppCompatActivity {
 
         }
     };
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture){
+
+    }
 }
